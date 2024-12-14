@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Dostępny Interfejs Filmowy</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="notificationOne" class="notification notificationOne" hidden>
+        <p id="notificationTextOne" class="notificationText">To jest powiadomienie.</p>
+        <button id="closeNotificationOne" class="closeNotification closeNotificationOne"><img src="icons/cancel.svg"
+                alt="Ikona wyłączenia" class="icon">
+            Zamknij powiadomienie</button>
+    </div>
+
+    <div id="notificationTwo" class="notification notificationSecond" hidden>
+        <p id="notificationTextTwo" class="notificationText">To jest inne powiadomienie.</p>
+        <button id="closeNotificationTwo" class="closeNotification closeNotificationSecond">
+            <img src="icons/cancel.svg" alt="Ikona wyłączenia" class="icon"> Zamknij powiadomienie
+        </button>
+    </div>
+
+    <header>
+        <h1>Serwis streamingowy - Praca Inżynierska</h1>
+
+        <div class="filterBox">
+            <button onclick="resetFilters()" class="filterButton">
+                <img src="icons/refresh.svg" alt="Ikona odświerzenia kolorów" class="icon iconReset">
+                <p>Resetuj kolory</p>
+            </button>
+            <button onclick="simulateDeuteranopia()" class="filterButton">
+                <img src="icons/palette.svg" alt="Ikona palety koloru zielonego" class="icon iconGreen">
+                <p>Symuluj Deuteranopię</p>
+            </button>
+            <button onclick="simulateTritanopia()" class="filterButton">
+                <img src="icons/palette.svg" alt="Ikona palety koloru niebieskiego" class="icon iconBlue">
+                <p>Symuluj Tritanopię</p>
+            </button>
+            <button onclick="simulateProtanopia()" class="filterButton">
+                <img src="icons/palette.svg" alt="Ikona palety koloru czerwonego" class="icon iconRed">
+                <p>Symuluj Protanopię</p>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="filmList" id="filmList">
+            <h2>Rekomendacje</h2>
+
+            <div class="filmListBox">
+                <article class="filmListBoxItem">
+                    <h3>Lot nad krawędzią natury</h3>
+                    <img src="img/imgOne.webp" alt="Lot nad krawędzią natury" class="filmListBoxItemImg">
+                    <button class="filmListBoxItemButton"><img src="icons/play.svg" alt="Ikona odtwarzania"
+                            class="icon"><span class="filmSpan">Odtwórz</span></button>
+                </article>
+
+                <article class="filmListBoxItem">
+                    <h3>Spokój wśród trzcin</h3>
+                    <img src="img/imgTwo.webp" alt="Spokój wśród trzcin" class="filmListBoxItemImg">
+                    <button class="filmListBoxItemButton"><img src="icons/play.svg" alt="Ikona odtwarzania filmu"
+                            class="icon"><span class="filmSpan">Odtwórz</span></button>
+                </article>
+
+                <article class="filmListBoxItem">
+                    <h3>Spokój strumienia</h3>
+                    <img src="img/imgThree.webp" alt="Spokój strumienia" class="filmListBoxItemImg">
+                    <button class="filmListBoxItemButton"><img src="icons/play.svg" alt="Ikona odtwarzania filmu"
+                            class="icon"><span class="filmSpan">Odtwórz</span></button>
+                </article>
+
+                <article class="filmListBoxItem">
+                    <h3>Muzyka wśród liści</h3>
+                    <img src="img/imgFour.webp" alt="Muzyka wśród liści" class="filmListBoxItemImg">
+                    <button class="filmListBoxItemButton"><img src="icons/play.svg" alt="Ikona odtwarzania filmu"
+                            class="icon"><span class="filmSpan">Odtwórz</span></button>
+                </article>
+            </div>
+
+            <div id="filmListBoxInfo" class="filmListBoxInfo">
+                <h3>Wybierz film z rekomendacji</h3>
+            </div>
+        </section>
+
+        <section id="videoPlayer" class="videoPlayer" hidden>
+            <video id="videoElement" class="videoElements" controls>
+                Twoja przeglądarka nie obsługuje elementu video.
+            </video>
+
+            <div class="elementPlayerControls">
+                <div class="left">
+                    <button id="rewindButton" class="playerButton">
+                        <img src="icons/rewind.svg" alt="Ikona przewinięcia filmu" class="icon"> Cofnij 5 sec
+                    </button>
+                    <button id="playButton" class="playerButton">
+                        <img src="icons/stop.svg" alt="Ikona zatrzymania filmu" class="icon"> Pauza
+                    </button>
+                    <button id="forwardButton" class="playerButton">
+                        <img src="icons/forward.svg" alt="Ikona przyśpieszenia filmu" class="icon"> Przewiń 5 sec
+                    </button>
+                </div>
+                <div class="right">
+                    <button id="settingsButton" class="playerButton">
+                        <img src="icons/settings.svg" alt="Ikona ustawień filmu" class="icon"> Ustawienia
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="settingsMenu" class="settingsMenu">
+            <h2>Ustawienia</h2>
+
+            <div class="settingsMenuFlex">
+                <div class="settingsMenuLabels">
+                    <label>
+                        Jasność ekranu: <span id="brightnessValue">100%</span>
+                        <input type="range" id="brightnessRange" min="0" max="200" value="100">
+                    </label>
+                    <label>
+                        Głośność dźwięku: <span id="volumeValue">50%</span>
+                        <input type="range" id="volumeRange" min="0" max="100" value="50">
+                    </label>
+                </div>
+
+                <div class="settingsMenuButtons">
+                    <div class="controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggleCaptionsDescription">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Napisy opisowe
+                        <p id="infoCaption"></p>
+                        </p>
+                        <div id="captionsContainer"></div>
+                    </div>
+
+                    <div class="controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggleVisualDescription">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Tryb opisu wizualnego
+                        <p id="visualCaption"></p>
+                        </p>
+                        <div id="visualContainer"></div>
+                    </div>
+
+                    <div class="controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggleAudioDescription">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Audiodeskrypcja
+                        <p id="audioCaption"></p>
+                        </p>
+                    </div>
+                    <h4>Jeśli przełączniki nie działają, odśwież stronę, korzystając z kombinacji klawiszy <span
+                            class="info">( CTRL + R )</span> lub <span class="info">(CTRL + SHIFT + R )</span>
+                    </h4>
+                </div>
+            </div>
+
+            <button class="settingsMenuClose" id="settingsMenuCloseButton"><img src="icons/close.svg"
+                    alt="Ikona wyłączenia" class="icon"></button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> | Wykonał Paweł Szatanik</p>
+    </footer>
+
+    <script src="javascript/descriptionAudio.js"></script>
+    <script src="javascript/descriptionCaption.js"></script>
+    <script src="javascript/descriptionVisual.js"></script>
+    <script src="javascript/films.js"></script>
+    <script src="javascript/filters.js"></script>
+    <script src="javascript/footer.js"></script>
+    <script src="javascript/notification.js"></script>
+    <script src="javascript/settings.js"></script>
+    <script src="javascript/video.js"></script>
+</body>
+
+</html>

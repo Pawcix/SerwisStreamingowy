@@ -1,0 +1,50 @@
+.filterBox {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .filterButton {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        padding: 15px 20px;
+        gap: 10px;
+        font-size: 18px;
+        background-color: #ffffff;
+        transition: background-color .2s ease;
+
+        &:hover {
+            background-color: #f0f2f5;
+        }
+
+        &:hover .iconReset {
+            transform: rotate(360deg) scale(1.5);
+        }
+
+        &:hover .iconGreen,
+        &:hover .iconRed,
+        &:hover .iconBlue {
+            transform: scale(1.5);
+        }
+
+        .iconReset {
+            filter: brightness(0) saturate(100%) invert(15%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(87%);
+            transition: all .5s ease;
+        }
+
+        .iconGreen {
+            filter: brightness(0) saturate(100%) invert(27%) sepia(86%) saturate(1396%) hue-rotate(92deg) brightness(97%) contrast(106%);
+            transition: all .5s ease;
+        }
+
+        .iconBlue {
+            filter: brightness(0) saturate(100%) invert(8%) sepia(95%) saturate(7392%) hue-rotate(247deg) brightness(101%) contrast(143%);
+            transition: all .5s ease;
+        }
+
+        .iconRed {
+            filter: brightness(0) saturate(100%) invert(14%) sepia(87%) saturate(6842%) hue-rotate(0deg) brightness(98%) contrast(120%);
+            transition: all .5s ease;
+        }
+    }
+}

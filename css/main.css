@@ -1,0 +1,418 @@
+#captionsContainer {
+  display: none;
+  position: absolute;
+  text-align: center;
+  max-width: 100%;
+  bottom: 150px;
+  left: 50%;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-50%);
+}
+
+#visualContainer {
+  display: none;
+  position: absolute;
+  text-align: left;
+  max-width: 100%;
+  top: 30px;
+  left: 30px;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.filmList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.filmList .filmListBox {
+  display: flex;
+  gap: 20px;
+}
+.filmList .filmListBox .filmListBoxItem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 335px;
+  padding: 20px;
+  gap: 25px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.filmList .filmListBox .filmListBoxItem .filmListBoxItemImg {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.filmList .filmListBox .filmListBoxItem .filmListBoxItemButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 32px;
+  gap: 6px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3b5998;
+}
+.filmList .filmListBox .filmListBoxItem .filmListBoxItemButton:hover {
+  background-color: #2d4373;
+}
+.filmList .filmListBoxInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.filterBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.filterBox .filterButton {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 15px 20px;
+  gap: 10px;
+  font-size: 18px;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+.filterBox .filterButton:hover {
+  background-color: #f0f2f5;
+}
+.filterBox .filterButton:hover .iconReset {
+  transform: rotate(360deg) scale(1.5);
+}
+.filterBox .filterButton:hover .iconGreen, .filterBox .filterButton:hover .iconRed, .filterBox .filterButton:hover .iconBlue {
+  transform: scale(1.5);
+}
+.filterBox .filterButton .iconReset {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(87%);
+  transition: all 0.5s ease;
+}
+.filterBox .filterButton .iconGreen {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(86%) saturate(1396%) hue-rotate(92deg) brightness(97%) contrast(106%);
+  transition: all 0.5s ease;
+}
+.filterBox .filterButton .iconBlue {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(95%) saturate(7392%) hue-rotate(247deg) brightness(101%) contrast(143%);
+  transition: all 0.5s ease;
+}
+.filterBox .filterButton .iconRed {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(87%) saturate(6842%) hue-rotate(0deg) brightness(98%) contrast(120%);
+  transition: all 0.5s ease;
+}
+
+.notification {
+  position: fixed;
+  padding: 20px;
+  top: 20px;
+  right: 20px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s infinite forwards;
+  z-index: 1000;
+}
+.notification .notificationText {
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.notification .closeNotification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  padding: 15px;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+.notification .closeNotification.closeNotificationOne {
+  background-color: #e68a00;
+}
+.notification .closeNotification.closeNotificationOne:hover {
+  background-color: #cc7a00;
+}
+.notification .closeNotification.closeNotificationSecond {
+  background-color: #28a745;
+}
+.notification .closeNotification.closeNotificationSecond:hover {
+  background-color: #218838;
+}
+.notification.notificationOne {
+  background-color: #ff9800;
+}
+.notification.notificationSecond {
+  background-color: #34c759;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.settingsMenu {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+}
+.settingsMenu .settingsMenuFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 25px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels {
+  padding-top: 25px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels h2 {
+  margin-bottom: 16px;
+  color: #333333;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels label {
+  display: block;
+  font-size: 20px;
+  color: #333333;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels label span {
+  margin-left: 2px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels span {
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333333;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels input[type=range] {
+  accent-color: #3b5998;
+  width: 100%;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls p {
+  font-size: 18px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch {
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+  width: 50px;
+  height: 25px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input:checked + .slider {
+  background-color: #4ed164;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: #ffffff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.settingsMenu .settingsMenuClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #3b5998;
+  flex-wrap: wrap;
+}
+.settingsMenu .settingsMenuClose:hover {
+  background-color: #2d4373;
+}
+
+.videoPlayer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 1400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.videoPlayer .videoElements {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.videoPlayer .elementPlayerControls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+.videoPlayer .elementPlayerControls .left,
+.videoPlayer .elementPlayerControls .right {
+  display: flex;
+  gap: 15px;
+}
+.videoPlayer .elementPlayerControls .left .playerButton,
+.videoPlayer .elementPlayerControls .right .playerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 6px;
+  padding: 16px 32px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #3b5998;
+}
+.videoPlayer .elementPlayerControls .left .playerButton:hover,
+.videoPlayer .elementPlayerControls .right .playerButton:hover {
+  background-color: #2d4373;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  color: #333333;
+  background-color: #f0f2f5;
+  font-family: "Poppins", serif !important;
+}
+
+header {
+  padding: 32px;
+  color: #ffffff;
+  background-color: #3b5998;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-weight: 600;
+}
+h4 .info {
+  font-size: 16px !important;
+  color: #3b5998 !important;
+  font-weight: 700;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #3b5998;
+}
+
+.icon {
+  width: 30px;
+  filter: brightness(0) saturate(100%) invert(94%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(107%) contrast(105%);
+}/*# sourceMappingURL=main.css.map */
