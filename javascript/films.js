@@ -29,19 +29,19 @@ playButtons.forEach((button, index) => {
         }
 
         if (index === 0) {
-            videoSrc = './movies/filmOne.mp4';
+            videoSrc = './movies/FilmOne.mp4';
             currentFilmIndex = 0;
         } else if (index === 1) {
-            videoSrc = './movies/filmTwo.mp4';
+            videoSrc = './movies/FilmTwo.mp4';
             currentFilmIndex = 1;
         } else if (index === 2) {
-            videoSrc = './movies/filmThree.mp4';
+            videoSrc = './movies/FilmThree.mp4';
             currentFilmIndex = 2;
         } else if (index === 3) {
-            videoSrc = './movies/filmFour.mp4';
+            videoSrc = './movies/FilmFour.mp4';
             currentFilmIndex = 3;
         } else {
-            videoSrc = './movies/filmOne.mp4';
+            videoSrc = './movies/FilmOne.mp4';
             currentFilmIndex = 0;
         }
 
