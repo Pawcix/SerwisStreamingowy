@@ -32,7 +32,7 @@ playButtons.forEach((button, index) => {
             videoSrc = './movies/FilmOne.mp4';
             currentFilmIndex = 0;
         } else if (index === 1) {
-            videoSrc = './movies/FilmTwo.mp4';
+            videoSrc = './movies/Filmtwo.mp4';
             currentFilmIndex = 1;
         } else if (index === 2) {
             videoSrc = './movies/FilmThree.mp4';
