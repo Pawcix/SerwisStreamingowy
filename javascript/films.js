@@ -29,19 +29,19 @@ playButtons.forEach((button, index) => {
         }
 
         if (index === 0) {
-            videoSrc = 'https://videos.pexels.com/video-files/6822867/6822867-hd_1920_1080_25fps.mp4';
+            videoSrc = './movies/filmOne.mp4';
             currentFilmIndex = 0;
         } else if (index === 1) {
-            videoSrc = 'https://videos.pexels.com/video-files/4872339/4872339-hd_1920_1080_30fps.mp4';
+            videoSrc = './movies/filmTwo.mp4';
             currentFilmIndex = 1;
         } else if (index === 2) {
-            videoSrc = 'https://videos.pexels.com/video-files/10386010/10386010-hd_2560_1440_30fps.mp4';
+            videoSrc = './movies/filmThree.mp4';
             currentFilmIndex = 2;
         } else if (index === 3) {
-            videoSrc = 'https://videos.pexels.com/video-files/1578318/1578318-hd_1920_1080_30fps.mp4';
+            videoSrc = './movies/filmFour.mp4';
             currentFilmIndex = 3;
         } else {
-            videoSrc = 'https://videos.pexels.com/video-files/6822867/6822867-hd_1920_1080_25fps.mp4';
+            videoSrc = './movies/filmOne.mp4';
             currentFilmIndex = 0;
         }
 
