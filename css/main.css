@@ -73,7 +73,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 150px;
   width: 100%;
   padding: 20px;
   border-radius: 10px;
@@ -186,7 +186,7 @@
   position: relative;
   display: none;
   flex-direction: column;
-  width: 600px;
+  width: 1400px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -194,10 +194,15 @@
 }
 .settingsMenu .settingsMenuFlex {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
   gap: 25px;
+}
+.settingsMenu .settingsMenuFlex .settingsMenuLabels,
+.settingsMenu .settingsMenuFlex .settingsMenuButtons,
+.settingsMenu .settingsMenuFlex .layers {
+  flex: 1;
 }
 .settingsMenu .settingsMenuFlex .settingsMenuLabels {
   padding-top: 25px;
@@ -226,41 +231,49 @@
   accent-color: #3b5998;
   width: 100%;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons,
+.settingsMenu .settingsMenuFlex .layers {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   gap: 15px;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls,
+.settingsMenu .settingsMenuFlex .layers .controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls p {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls p,
+.settingsMenu .settingsMenuFlex .layers .controls p {
   font-size: 18px;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch,
+.settingsMenu .settingsMenuFlex .layers .controls .toggle-switch {
   position: relative;
   display: inline-block;
   flex-direction: column;
   width: 50px;
   height: 25px;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input,
+.settingsMenu .settingsMenuFlex .layers .controls .toggle-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input:checked + .slider {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input:checked + .slider,
+.settingsMenu .settingsMenuFlex .layers .controls .toggle-switch input:checked + .slider {
   background-color: #4ed164;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input:checked + .slider:before {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch input:checked + .slider:before,
+.settingsMenu .settingsMenuFlex .layers .controls .toggle-switch input:checked + .slider:before {
   transform: translateX(24px);
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch .slider {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch .slider,
+.settingsMenu .settingsMenuFlex .layers .controls .toggle-switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -271,7 +284,8 @@
   transition: 0.4s;
   border-radius: 25px;
 }
-.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch .slider:before {
+.settingsMenu .settingsMenuFlex .settingsMenuButtons .controls .toggle-switch .slider:before,
+.settingsMenu .settingsMenuFlex .layers .controls .toggle-switch .slider:before {
   position: absolute;
   content: "";
   height: 20px;
@@ -310,6 +324,12 @@
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.videoPlayer .videos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 .videoPlayer .videoElements {
   width: 100%;
@@ -415,4 +435,10 @@ footer {
 .icon {
   width: 30px;
   filter: brightness(0) saturate(100%) invert(94%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(107%) contrast(105%);
+}
+
+#myCanvas {
+  pointer-events: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=main.css.map */

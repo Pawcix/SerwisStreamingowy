@@ -1,5 +1,6 @@
 const videoPlayer = document.querySelector('#videoPlayer');
 const videoElement = document.querySelector('#videoElement');
+const videos = document.querySelector('.videos')
 
 const rewindButton = document.querySelector('#rewindButton');
 const playButton = document.querySelector('#playButton');
@@ -29,6 +30,20 @@ const forwardVideo = () => {
 const toggleSettingsMenu = () => {
     if (settingsMenu.style.display === 'flex') {
         settingsMenu.style.display = 'none';
+
+        const allCheckboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
+        allCheckboxes.forEach(cb => {
+            cb.checked = false;
+        });
+
+        canvas.style.display = 'none';
+        videoElement.style.width = '100%';
+        videos.style.gap = '0px';
+
+        resetDescriptiveCaptions();
+        resetVisualDescription();
+        resetAudioDescription();
+
     } else {
         settingsMenu.style.display = 'flex';
     }

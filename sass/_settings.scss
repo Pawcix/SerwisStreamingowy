@@ -2,7 +2,7 @@
     position: relative;
     display: none;
     flex-direction: column;
-    width: 600px;
+    width: 1400px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -10,10 +10,16 @@
 
     .settingsMenuFlex {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-evenly;
         width: 100%;
         gap: 25px;
+
+        .settingsMenuLabels,
+        .settingsMenuButtons,
+        .layers {
+            flex: 1;
+        }
 
         .settingsMenuLabels {
             padding-top: 25px;
@@ -48,7 +54,8 @@
             }
         }
 
-        .settingsMenuButtons {
+        .settingsMenuButtons,
+        .layers {
             display: flex;
             align-items: flex-start;
             flex-direction: column;

@@ -95,9 +95,16 @@
         </section>
 
         <section id="videoPlayer" class="videoPlayer" hidden>
-            <video id="videoElement" class="videoElements" controls>
-                Twoja przeglądarka nie obsługuje elementu video.
-            </video>
+            <div class="videos">
+                <video id="videoElement" class="videoElements" controls>
+                    Twoja przeglądarka nie obsługuje elementu video.
+                </video>
+
+                <div id="container">
+                    <canvas id="myCanvas" width="675" height="382.5"></canvas>
+                </div>
+            </div>
+
 
             <div class="elementPlayerControls">
                 <div class="left">
@@ -134,7 +141,32 @@
                     </label>
                 </div>
 
+                <div class="layers">
+                    <div class="controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="redBtn">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Czerwony</p>
+                    </div>
+                    <div class="controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="blueBtn">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Niebieski</p>
+                    </div>
+                    <div class="controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="greenBtn">
+                            <span class="slider"></span>
+                        </label>
+                        <p>Zielony</p>
+                    </div>
+                </div>
+
                 <div class="settingsMenuButtons">
+                    <h3>Dodatkowe ustawienia filmu</h3>
                     <div class="controls">
                         <label class="toggle-switch">
                             <input type="checkbox" id="toggleCaptionsDescription">
@@ -166,6 +198,7 @@
                         <p id="audioCaption"></p>
                         </p>
                     </div>
+
                     <h4>Jeśli przełączniki nie działają, odśwież stronę, korzystając z kombinacji klawiszy <span
                             class="info">( CTRL + R )</span> lub <span class="info">(CTRL + SHIFT + R )</span>
                     </h4>
@@ -187,6 +220,7 @@
     <script src="javascript/films.js"></script>
     <script src="javascript/filters.js"></script>
     <script src="javascript/footer.js"></script>
+    <script src="javascript/layers.js"></script>
     <script src="javascript/notification.js"></script>
     <script src="javascript/settings.js"></script>
     <script src="javascript/video.js"></script>

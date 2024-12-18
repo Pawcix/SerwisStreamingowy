@@ -78,3 +78,11 @@ footer {
     width: 30px;
     filter: brightness(0) saturate(100%) invert(94%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(107%) contrast(105%);
 }
+
+
+
+#myCanvas {
+    pointer-events: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
