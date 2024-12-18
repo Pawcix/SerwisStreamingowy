@@ -1,5 +1,4 @@
 const toggleAudioDescription = document.querySelector('#toggleAudioDescription');
-const audioCaption = document.querySelector('#audioCaption')
 
 let audioDescriptionEnabled = false;
 let lastAudioDescriptionText = '';
@@ -22,7 +21,6 @@ const audioDescriptionData = {
 const resetAudioDescription = () => {
     audioDescriptionEnabled = false;
     toggleAudioDescription.checked = false;
-    audioCaption.textContent = '( Wyłączony )';
     speechSynthesis.cancel();
     lastAudioDescriptionText = '';
 }
@@ -54,12 +52,6 @@ const updateAudioDescription = () => {
 }
 
 toggleAudioDescription.addEventListener('change', () => {
-    if (toggleAudioDescription.checked) {
-        audioCaption.textContent = '( Włączony )'
-    } else {
-        audioCaption.textContent = '( Wyłączony )'
-    }
-
     audioDescriptionEnabled = toggleAudioDescription.checked;
 
     if (!audioDescriptionEnabled) {

@@ -6,6 +6,8 @@ const volumeValue = document.querySelector('#volumeValue');
 const brightnessRange = document.querySelector('#brightnessRange');
 const brightnessValue = document.querySelector('#brightnessValue');
 
+const hue = brightnessRange.value
+
 const closeSettingsMenu = () => {
     settingsMenu.style.display = 'none'
 }
@@ -28,6 +30,3 @@ volumeRange.addEventListener('input', () => {
     volumeValue.textContent = `${volumeRange.value}%`;
     applySettings();
 });
-
-
-

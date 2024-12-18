@@ -1,6 +1,5 @@
 const toggleCaptionsDescription = document.querySelector('#toggleCaptionsDescription');
 const captionsContainer = document.querySelector('#captionsContainer')
-const infoCaption = document.querySelector('#infoCaption')
 
 let descriptiveCaptionsEnabled = false;
 
@@ -33,7 +32,6 @@ const resetDescriptiveCaptions = () => {
     captionsContainer.style.display = 'none';
     captionsContainer.textContent = '';
     toggleCaptionsDescription.checked = false;
-    infoCaption.textContent = '( Wyłączony )';
 };
 
 const updateDescriptiveCaptions = () => {
@@ -56,12 +54,6 @@ const updateDescriptiveCaptions = () => {
 }
 
 toggleCaptionsDescription.addEventListener('change', () => {
-    if (toggleCaptionsDescription.checked) {
-        infoCaption.textContent = '( Włączony )'
-    } else {
-        infoCaption.textContent = '( Wyłączony )'
-    }
-
     descriptiveCaptionsEnabled = toggleCaptionsDescription.checked;
 });
 

@@ -4,6 +4,7 @@
     flex-direction: column;
     width: 1400px;
     padding: 20px;
+    gap: 25px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
@@ -22,8 +23,12 @@
         }
 
         .settingsMenuLabels {
-            padding-top: 25px;
-
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            
             h2 {
                 margin-bottom: 16px;
                 color: #333333;

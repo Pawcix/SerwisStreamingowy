@@ -131,38 +131,50 @@
 
             <div class="settingsMenuFlex">
                 <div class="settingsMenuLabels">
-                    <label>
-                        Jasność ekranu: <span id="brightnessValue">100%</span>
-                        <input type="range" id="brightnessRange" min="0" max="200" value="100">
-                    </label>
-                    <label>
-                        Głośność dźwięku: <span id="volumeValue">50%</span>
-                        <input type="range" id="volumeRange" min="0" max="100" value="50">
-                    </label>
+                    <h3>Ustawienia jasności i głośności</h3>
+
+                    <div>
+                        <label>
+                            Jasność ekranu: <span id="brightnessValue">100%</span>
+                            <input type="range" id="brightnessRange" min="0" max="200" value="100">
+                        </label>
+                        <label>
+                            Głośność dźwięku: <span id="volumeValue">50%</span>
+                            <input type="range" id="volumeRange" min="0" max="100" value="50">
+                        </label>
+                    </div>
+
+                    <h4> Dostosuj jasność i głośność do swoich preferencji. Wartości procentowe <span class="info">( %
+                            )</span>, pokazują aktualny poziom ustawienia.
+                    </h4>
                 </div>
 
                 <div class="layers">
+                    <h3>Wybór warstw kolorów</h3>
                     <div class="controls">
-                        <label class="toggle-switch">
+                        <label class="toggle-switch layers">
                             <input type="checkbox" id="redBtn">
                             <span class="slider"></span>
                         </label>
                         <p>Czerwony</p>
                     </div>
                     <div class="controls">
-                        <label class="toggle-switch">
+                        <label class="toggle-switch layers">
                             <input type="checkbox" id="blueBtn">
                             <span class="slider"></span>
                         </label>
                         <p>Niebieski</p>
                     </div>
                     <div class="controls">
-                        <label class="toggle-switch">
+                        <label class="toggle-switch layers">
                             <input type="checkbox" id="greenBtn">
                             <span class="slider"></span>
                         </label>
                         <p>Zielony</p>
                     </div>
+                    <h4> Wybierz kolory, które mają zostać wyróżnione na filmie. Zaznaczone barwy
+                        zostaną oznaczone specjalnym ciemnym symbolem <span class="info">( X )</span>
+                    </h4>
                 </div>
 
                 <div class="settingsMenuButtons">
@@ -172,9 +184,7 @@
                             <input type="checkbox" id="toggleCaptionsDescription">
                             <span class="slider"></span>
                         </label>
-                        <p>Napisy opisowe
-                        <p id="infoCaption"></p>
-                        </p>
+                        <p>Napisy opisowe</p>
                         <div id="captionsContainer"></div>
                     </div>
 
@@ -183,9 +193,7 @@
                             <input type="checkbox" id="toggleVisualDescription">
                             <span class="slider"></span>
                         </label>
-                        <p>Tryb opisu wizualnego
-                        <p id="visualCaption"></p>
-                        </p>
+                        <p>Tryb opisu wizualnego</p>
                         <div id="visualContainer"></div>
                     </div>
 
@@ -194,9 +202,7 @@
                             <input type="checkbox" id="toggleAudioDescription">
                             <span class="slider"></span>
                         </label>
-                        <p>Audiodeskrypcja
-                        <p id="audioCaption"></p>
-                        </p>
+                        <p>Audiodeskrypcja</p>
                     </div>
 
                     <h4>Jeśli przełączniki nie działają, odśwież stronę, korzystając z kombinacji klawiszy <span

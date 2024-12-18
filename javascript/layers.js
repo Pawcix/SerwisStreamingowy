@@ -3,10 +3,9 @@ const ctx = canvas.getContext('2d');
 
 let currentColor = null;
 
+canvas.style.display = 'none';
 
-
-
-function rgbToHsl(r, g, b) {
+const rgbToHsl = (r, g, b) => {
     r /= 255; g /= 255; b /= 255;
     let max = Math.max(r, g, b), min = Math.min(r, g, b);
     let h, s, l = (max + min) / 2;
@@ -26,6 +25,44 @@ function rgbToHsl(r, g, b) {
 
     return [h, s, l];
 }
+
+const toggleCanvasColor = (checkboxId, color) => {
+    const checkbox = document.getElementById(checkboxId);
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            const allCheckboxes = document.querySelectorAll('.layers input[type="checkbox"]');
+            allCheckboxes.forEach(cb => {
+                if (cb !== checkbox) {
+                    cb.checked = false;
+                }
+            });
+
+            currentColor = color;
+            canvas.style.display = 'flex';
+            canvas.style.backgroundColor = currentColor;
+            videoElement.style.width = '675px'
+            videos.style.gap = '10px'
+
+            resetDescriptiveCaptions();
+            resetVisualDescription();
+            resetAudioDescription();
+        } else {
+            const anyChecked = Array.from(document.querySelectorAll('.layers input[type="checkbox"]'))
+                .some(cb => cb.checked);
+
+            if (!anyChecked) {
+                canvas.style.display = 'none';
+            }
+
+            videoElement.style.width = '100%'
+            videos.style.gap = '0px'
+        }
+    });
+}
+
+toggleCanvasColor('redBtn', 'red');
+toggleCanvasColor('blueBtn', 'blue');
+toggleCanvasColor('greenBtn', 'green');
 
 videoElement.addEventListener('play', function () {
     function render() {
@@ -86,43 +123,3 @@ videoElement.addEventListener('play', function () {
     }
     render();
 });
-
-canvas.style.display = 'none';
-
-function toggleCanvasColor(checkboxId, color) {
-    const checkbox = document.getElementById(checkboxId);
-    checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-            // Wyłącz pozostałe checkboxy
-            const allCheckboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
-            allCheckboxes.forEach(cb => {
-                if (cb !== checkbox) {
-                    cb.checked = false;
-                }
-            });
-
-            // Ustaw kolor i pokaż canvas
-            currentColor = color;
-            canvas.style.display = 'flex';
-            canvas.style.backgroundColor = currentColor;
-            videoElement.style.width = '675px'
-            videos.style.gap = '10px'
-        } else {
-            // Sprawdź, czy żaden inny checkbox nie jest włączony
-            const anyChecked = Array.from(document.querySelectorAll('.toggle-switch input[type="checkbox"]'))
-                .some(cb => cb.checked);
-
-            // Jeśli żaden nie jest zaznaczony, schowaj canvas
-            if (!anyChecked) {
-                canvas.style.display = 'none';
-            }
-
-            videoElement.style.width = '100%'
-            videos.style.gap = '0px'
-        }
-    });
-}
-
-toggleCanvasColor('redBtn', 'red');
-toggleCanvasColor('blueBtn', 'blue');
-toggleCanvasColor('greenBtn', 'green');

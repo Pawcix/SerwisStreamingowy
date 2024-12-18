@@ -1,6 +1,5 @@
 const toggleVisualDescription = document.querySelector('#toggleVisualDescription');
 const visualContainer = document.querySelector('#visualContainer')
-const visualCaption = document.querySelector('#visualCaption')
 
 let visualDescriptionEnabled = false;
 
@@ -24,7 +23,6 @@ const resetVisualDescription = () => {
     visualContainer.style.display = 'none';
     visualContainer.textContent = '';
     toggleVisualDescription.checked = false;
-    visualCaption.textContent = '( Wyłączony )';
 };
 
 const updateVisualDescription = () => {
@@ -48,12 +46,6 @@ const updateVisualDescription = () => {
 }
 
 toggleVisualDescription.addEventListener('click', () => {
-    if (toggleVisualDescription.checked) {
-        visualCaption.textContent = '( Włączony )'
-    } else {
-        visualCaption.textContent = '( Wyłączony )'
-    }
-
     visualDescriptionEnabled = toggleVisualDescription.checked;
     updateVisualDescription();
 });

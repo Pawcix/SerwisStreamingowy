@@ -21,6 +21,15 @@ playButtons.forEach((button, index) => {
         let videoSrc;
 
         if (previousButtonIndex !== null && previousButtonIndex !== index) {
+            const allCheckboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
+            allCheckboxes.forEach(cb => {
+                cb.checked = false;
+            });
+
+            canvas.style.display = 'none';
+            videoElement.style.width = '100%';
+            videos.style.gap = '0px';
+
             resetDescriptiveCaptions();
             resetVisualDescription();
             resetAudioDescription();
